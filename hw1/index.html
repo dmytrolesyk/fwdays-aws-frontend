@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blobfish vs Beaver - Aquatic Vibes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #070b1a;
+      --bg-alt: #0f172a;
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.12);
+      --accent-2: #38bdf8;
+      --accent-2-soft: rgba(56, 189, 248, 0.12);
+      --text: #e5e7eb;
+      --text-soft: #9ca3af;
+      --card: rgba(15, 23, 42, 0.95);
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --shadow-soft: 0 20px 60px rgba(15, 23, 42, 0.9);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background:
+        radial-gradient(circle at top left, #1f2937 0, transparent 60%),
+        radial-gradient(circle at bottom right, #111827 0, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .page {
+      max-width: 1100px;
+      width: 100%;
+      background: radial-gradient(circle at top, #111827 0, #020617 38%);
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.7;
+      mix-blend-mode: screen;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.08) 0, transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(249, 115, 22, 0.07) 0, transparent 55%);
+      z-index: -1;
+    }
+
+    header {
+      padding: 24px 28px 8px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.17);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 2.2vw, 2.3rem);
+      margin: 0;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.2);
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      max-width: 480px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .toggle-btn,
+    .pill-btn {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(16px);
+      transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.09s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .toggle-btn:hover,
+    .pill-btn:hover {
+      background: rgba(15, 23, 42, 1);
+      color: var(--text);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.7);
+    }
+
+    .toggle-btn:active,
+    .pill-btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .pill-btn--accent {
+      border-color: rgba(249, 115, 22, 0.85);
+      background: linear-gradient(135deg, #f97316, #ec4899);
+      color: #0b1020;
+      font-weight: 600;
+    }
+
+    .pill-btn--accent:hover {
+      filter: brightness(1.05);
+      box-shadow: 0 14px 30px rgba(249, 115, 22, 0.8);
+    }
+
+    main {
+      padding: 18px 24px 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 28px;
+      align-items: center;
+      padding: 10px 6px 10px 4px;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .controls {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.7rem, 3.1vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, #38bdf8, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: 800;
+    }
+
+    .hero-copy {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 6px;
+      font-size: 0.9rem;
+    }
+
+    .hero-list li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      width: fit-content;
+    }
+
+    .pill-icon {
+      font-size: 1rem;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scene {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 4 / 3;
+      border-radius: 26px;
+      padding: 10px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.25) 0, transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(249, 115, 22, 0.26) 0, transparent 55%),
+        linear-gradient(160deg, #020617, #0b1120);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .scene-top-label {
+      position: absolute;
+      left: 16px;
+      top: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .blobfish,
+    .beaver {
+      position: absolute;
+      transform-origin: center;
+      transition: transform 0.25s ease-out;
+      cursor: pointer;
+    }
+
+    .blobfish {
+      left: 14%;
+      bottom: 20%;
+    }
+
+    .beaver {
+      right: 10%;
+      bottom: 18%;
+    }
+
+    .blobfish:hover,
+    .beaver:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    .blobfish-body {
+      width: 120px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 10%, #f9a8d4 0, #f97373 40%, #f87171 75%);
+      border-radius: 70% 60% 90% 90%;
+      position: relative;
+      box-shadow: 0 12px 24px rgba(248, 113, 113, 0.55);
+      border: 2px solid rgba(248, 250, 252, 0.65);
+    }
+
+    .blobfish-nose {
+      position: absolute;
+      width: 52px;
+      height: 34px;
+      border-radius: 70% 130% 120% 100%;
+      background: radial-gradient(circle at 0 0, #fecaca 0, #f97373 65%);
+      bottom: -6px;
+      left: 10px;
+      border: 1px solid rgba(248, 250, 252, 0.7);
+    }
+
+    .blobfish-eye {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #0f172a;
+      top: 26px;
+      box-shadow: 0 0 0 2px #fef2f2;
+    }
+
+    .blobfish-eye::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #f9fafb;
+      border-radius: 50%;
+      top: 2px;
+      left: 4px;
+      opacity: 0.85;
+    }
+
+    .blobfish-eye--left {
+      left: 30px;
+    }
+
+    .blobfish-eye--right {
+      left: 60px;
+    }
+
+    .blobfish-mouth {
+      position: absolute;
+      width: 42px;
+      height: 22px;
+      border-bottom-left-radius: 22px;
+      border-bottom-right-radius: 22px;
+      bottom: 6px;
+      left: 22px;
+      border-bottom: 3px solid rgba(15, 23, 42, 0.85);
+    }
+
+    .blobfish-blush {
+      position: absolute;
+      width: 12px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(248, 113, 113, 0.5);
+      top: 42px;
+    }
+
+    .blobfish-blush--left {
+      left: 24px;
+    }
+
+    .blobfish-blush--right {
+      right: 18px;
+    }
+
+    .beaver-body {
+      width: 120px;
+      height: 70px;
+      background: radial-gradient(circle at 20% 0%, #facc15 0, #92400e 55%, #451a03 80%);
+      border-radius: 60% 60% 40% 40%;
+      position: relative;
+      box-shadow: 0 12px 20px rgba(88, 28, 135, 0.75);
+      border: 2px solid rgba(248, 250, 252, 0.4);
+    }
+
+    .beaver-head {
+      position: absolute;
+      width: 60px;
+      height: 52px;
+      background: radial-gradient(circle at 50% 0, #fed7aa 0, #92400e 55%);
+      border-radius: 60% 60% 50% 50%;
+      left: -6px;
+      top: -6px;
+      border: 2px solid rgba(249, 250, 251, 0.5);
+    }
+
+    .beaver-ear {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: #78350f;
+      border-radius: 50%;
+      top: -10px;
+      left: 10px;
+      box-shadow: 20px 2px 0 #78350f;
+    }
+
+    .beaver-eye {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #020617;
+      border-radius: 50%;
+      top: 18px;
+      left: 20px;
+      box-shadow: 18px 0 0 #020617;
+    }
+
+    .beaver-teeth {
+      position: absolute;
+      width: 22px;
+      height: 16px;
+      background: #f9fafb;
+      border-radius: 0 0 4px 4px;
+      bottom: -6px;
+      left: 16px;
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8);
+    }
+
+    .beaver-teeth::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      background: rgba(148, 163, 184, 0.9);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .beaver-tail {
+      position: absolute;
+      width: 60px;
+      height: 34px;
+      background: #111827;
+      border-radius: 40px;
+      right: -22px;
+      bottom: 6px;
+      box-shadow: inset 0 0 0 2px rgba(148, 163, 184, 0.45);
+      transform: rotate(-10deg);
+      overflow: hidden;
+    }
+
+    .beaver-tail::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(45deg, rgba(148, 163, 184, 0.35) 1px, transparent 1px),
+        linear-gradient(-45deg, rgba(148, 163, 184, 0.35) 1px, transparent 1px);
+      background-size: 8px 8px;
+      opacity: 0.7;
+    }
+
+    .water-line {
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: 16%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0, rgba(148, 163, 184, 0.6) 30%, rgba(148, 163, 184, 0.8) 70%, transparent 100%);
+      opacity: 0.8;
+    }
+
+    .water-bubble {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(191, 219, 254, 0.75);
+      background: rgba(15, 23, 42, 0.6);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .water-bubble:nth-child(1) { left: 18%; bottom: 34%; animation-delay: 0.3s; }
+    .water-bubble:nth-child(2) { left: 38%; bottom: 26%; animation-delay: 1.1s; }
+    .water-bubble:nth-child(3) { left: 62%; bottom: 30%; animation-delay: 0.6s; }
+    .water-bubble:nth-child(4) { left: 78%; bottom: 22%; animation-delay: 1.6s; }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 0.4; }
+      40% { opacity: 1; }
+      100% { transform: translateY(-14px); opacity: 0.1; }
+    }
+
+    .scene-footer {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .scene-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 820px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(251, 191, 36, 0.14), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.25s ease-out;
+      pointer-events: none;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .chip--blobfish {
+      border-color: rgba(248, 113, 113, 0.8);
+      background: var(--accent-soft);
+    }
+
+    .chip--beaver {
+      border-color: rgba(52, 211, 153, 0.8);
+      background: rgba(16, 185, 129, 0.12);
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .traits {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: grid;
+      gap: 4px;
+    }
+
+    .traits li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trait-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.4);
+    }
+
+    .trait-dot--blobfish {
+      background: rgba(248, 113, 113, 0.9);
+    }
+
+    .trait-dot--beaver {
+      background: rgba(45, 212, 191, 0.95);
+    }
+
+    .comparisons {
+      margin-top: 18px;
+      border-radius: 20px;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+      padding: 12px 14px;
+      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.05) 0, transparent 60%);
+      display: grid;
+      gap: 8px;
+    }
+
+    .comparisons-header {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .matchup {
+      display: grid;
+      grid-template-columns: 1.2fr 1.2fr 0.9fr;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .matchup {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .matchup-col {
+      border-radius: 16px;
+      padding: 8px 10px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .matchup-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .matchup-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.82rem;
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: var(--accent-soft);
+      color: var(--text);
+    }
+
+    .winner-tag {
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.21);
+      border: 1px solid rgba(74, 222, 128, 0.8);
+      color: #bbf7d0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .winner-tag span {
+      font-size: 1rem;
+    }
+
+    .fun-fact-section {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 800px) {
+      .fun-fact-section {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .fun-facts {
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 16px 16px;
+    }
+
+    .fun-facts-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .fun-facts-title {
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+    }
+
+    .fact-display {
+      margin-top: 4px;
+      border-radius: 16px;
+      padding: 10px 12px;
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16) 0, transparent 60%);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fact-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(191, 219, 254, 1);
+      margin-bottom: 6px;
+    }
+
+    .fact-body {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .fact-meta {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .fact-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .footnote {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .footnote strong {
+      color: var(--accent-2);
+      font-weight: 600;
+    }
+
+    .cta-note {
+      font-size: 0.85rem;
+      margin-top: 4px;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    .cta-note code {
+      padding: 1px 4px;
+      border-radius: 4px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.8rem;
+    }
+
+    .mini-nav {
+      display: inline-flex;
+      gap: 10px;
+      font-size: 0.78rem;
+      margin-top: 6px;
+    }
+
+    .mini-nav a {
+      color: var(--accent-2);
+      text-decoration: none;
+      opacity: 0.8;
+    }
+
+    .mini-nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .page.sea-mode {
+      background: radial-gradient(circle at top, #020617 0, #020617 40%);
+    }
+
+    .page.sea-mode main {
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 60%);
+    }
+
+    .page.sea-mode .scene-footer {
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .page.sea-mode .toggle-btn--sea {
+      background: var(--accent-2-soft);
+      border-color: rgba(56, 189, 248, 0.9);
+      color: #e0f2fe;
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="page">
+    <header>
+      <div class="title-group">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Static Site · Zero Backend · 100% Animal Drama
+        </div>
+        <h1>Blobfish & Beaver Appreciation Portal</h1>
+        <p class="subtitle">
+          A highly scientific* comparison between a deep-sea melancholy meatball and
+          an overachieving aquatic architect. (*Science may contain trace amounts of nonsense.)
+        </p>
+      </div>
+      <div class="controls">
+        <button class="toggle-btn toggle-btn--sea" id="modeToggle">
+          🌊 Lake / Abyss Mode
+        </button>
+        <button class="pill-btn" id="blobfishButton">
+          🫠 Make the blobfish feel seen
+        </button>
+        <button class="pill-btn pill-btn--accent" id="factButton">
+          🎲 Roll a random fun fact
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <div class="hero-eyebrow">
+            🧪 Exhibit A:
+            <span>When nature clicked “shuffle”</span>
+          </div>
+          <div class="hero-title">
+            On one side: a <span class="hero-highlight">blobfish</span> that looks like
+            Monday morning. On the other: a <span class="hero-highlight">beaver</span>
+            with a LinkedIn profile.
+          </div>
+          <p class="hero-copy">
+            Both live suspiciously moist lifestyles, but only one of them builds real-estate
+            and the other one accidentally became a meme. Scroll down to compare their skills,
+            emotional vibes, and suitability as mascots for your S3 bucket.
+          </p>
+          <ul class="hero-list">
+            <li>
+              <span class="pill-icon">🫠</span>
+              Blobfish: deep-sea overcooked marshmallow with anxiety aura.
+            </li>
+            <li>
+              <span class="pill-icon">🦫</span>
+              Beaver: furry engineer who works overtime and doesn’t unionize.
+            </li>
+            <li>
+              <span class="pill-icon">📦</span>
+              You: deploying static HTML to S3 like an absolute cloud wizard.
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-art">
+          <div class="scene" aria-hidden="true">
+            <div class="scene-top-label">
+              <span>Live from: The Damp Dimension</span>
+            </div>
+
+            <div class="blobfish" id="blobfishAvatar">
+              <div class="blobfish-body">
+                <div class="blobfish-eye blobfish-eye--left"></div>
+                <div class="blobfish-eye blobfish-eye--right"></div>
+                <div class="blobfish-mouth"></div>
+                <div class="blobfish-blush blobfish-blush--left"></div>
+                <div class="blobfish-blush blobfish-blush--right"></div>
+                <div class="blobfish-nose"></div>
+              </div>
+            </div>
+
+            <div class="beaver">
+              <div class="beaver-body">
+                <div class="beaver-head">
+                  <div class="beaver-ear"></div>
+                  <div class="beaver-eye"></div>
+                  <div class="beaver-teeth"></div>
+                </div>
+                <div class="beaver-tail"></div>
+              </div>
+            </div>
+
+            <div class="water-line"></div>
+            <div class="water-bubble"></div>
+            <div class="water-bubble"></div>
+            <div class="water-bubble"></div>
+            <div class="water-bubble"></div>
+
+            <div class="scene-footer">
+              <span class="scene-dot"></span>
+              <span>Hover them · They’re trying their best</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-label">Profile · Blobfish</div>
+              <h2 class="card-title">Emotionally relatable sea potato</h2>
+            </div>
+            <span class="chip chip--blobfish">
+              🫠 Status: permanently done
+            </span>
+          </div>
+          <div class="card-body">
+            The blobfish lives so deep underwater that, in its natural habitat,
+            it actually looks… kind of normal. It only turns into a depressed jelly
+            croissant when brought to the surface. Honestly? Same.
+            <ul class="traits">
+              <li>
+                <span class="trait-dot trait-dot--blobfish"></span>
+                Squishy body adapted to high pressure, unlike your production deployments.
+              </li>
+              <li>
+                <span class="trait-dot trait-dot--blobfish"></span>
+                Zero bones, yet still more backbone than some codebases.
+              </li>
+              <li>
+                <span class="trait-dot trait-dot--blobfish"></span>
+                Natural talent for reaction memes and “I woke up like this” content.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-label">Profile · Beaver</div>
+              <h2 class="card-title">Full-stack dam developer</h2>
+            </div>
+            <span class="chip chip--beaver">
+              🦫 Status: shipping to prod
+            </span>
+          </div>
+          <div class="card-body">
+            Beavers are basically furry civil engineers. They build dams, lodges,
+            and entire wetland ecosystems—no Jira tickets, no stand-ups, just raw execution.
+            <ul class="traits">
+              <li>
+                <span class="trait-dot trait-dot--beaver"></span>
+                Expert in distributed systems: logs, branches, and streams.
+              </li>
+              <li>
+                <span class="trait-dot trait-dot--beaver"></span>
+                Uses teeth as both DevTools and demolition tools. Efficient.
+              </li>
+              <li>
+                <span class="trait-dot trait-dot--beaver"></span>
+                Can reshuffle a whole river; still can’t fix your CSS in IE11.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="comparisons">
+        <div class="comparisons-header">
+          <span>Head-to-Head Matchups</span>
+          <span class="mini-nav">
+            <a href="#top">↑ Back to the top</a>
+            <a href="https://aws.amazon.com/s3/" target="_blank" rel="noreferrer">
+              AWS S3 docs (serious stuff)
+            </a>
+          </span>
+        </div>
+        <div class="matchup">
+          <div class="matchup-col">
+            <div class="matchup-label">Code mascot potential</div>
+            <div class="matchup-pill">
+              🫠 Blobfish
+            </div>
+            <p class="card-body">
+              Perfect for error pages, “this build is cursed” screens, and 3 AM logs that
+              simply say “why”.
+            </p>
+          </div>
+          <div class="matchup-col">
+            <div class="matchup-label">Infrastructure mascot potential</div>
+            <div class="matchup-pill">
+              🦫 Beaver
+            </div>
+            <p class="card-body">
+              Extremely on-brand for “build pipelines”, “streams”, and “this dam better not break”.
+            </p>
+          </div>
+          <div class="matchup-col">
+            <div class="matchup-label">Overall winner</div>
+            <div class="winner-tag">
+              <span>🏆</span>
+              You, deploying HTML to S3
+            </div>
+            <p class="card-body">
+              Blobfish brings the vibes, beaver brings the architecture, you bring the
+              <strong>static hosting skills</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="fun-fact-section">
+        <div class="fun-facts">
+          <div class="fun-facts-header">
+            <div class="fun-facts-title">Dynamic Fun Fact Feed</div>
+            <button class="toggle-btn" id="factSecondaryButton">
+              🔁 Shuffle again
+            </button>
+          </div>
+          <div class="fact-display" id="factDisplay">
+            <div class="fact-tag">
+              <span>🎓 Selected fact</span>
+            </div>
+            <p class="fact-body" id="factText">
+              Blobfish don’t really “swim” so much as “exist while slightly disappointed”
+              in the water column.
+            </p>
+            <div class="fact-meta">
+              <span>Source: <em>Trust me bro: marine edition</em></span>
+              <span>Bias: 50% blobfish, 50% beaver, 100% nonsense</span>
+            </div>
+          </div>
+          <p class="footnote">
+            Tip: Once you upload this file as <strong>index.html</strong> to an S3 bucket,
+            enable static website hosting, and point your browser at the bucket’s website URL.
+            If you can see the blobfish, congratulations:
+            <strong>your hosting works</strong>.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-label">Mini Checklist</div>
+              <h2 class="card-title">S3 Static Hosting, Animal-Powered Edition</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <ol style="padding-left: 18px; margin: 0; display: grid; gap: 6px;">
+              <li>Create an S3 bucket (bonus points if it has a beaver/ blobfish name).</li>
+              <li>Disable “Block all public access” for the bucket (carefully 👀).</li>
+              <li>Upload this file as <code>index.html</code>.</li>
+              <li>In <strong>Properties → Static website hosting</strong>, enable it and set
+                <code>index.html</code> as the index document.</li>
+              <li>Open the website endpoint. If it looks moist and chaotic, success.</li>
+            </ol>
+            <p class="cta-note">
+              Pro move: later, point a custom domain at it with Route&nbsp;53 &amp; CloudFront.
+              Blobfish approves this message.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      const page = document.getElementById("page");
+      const modeToggle = document.getElementById("modeToggle");
+      const blobfishAvatar = document.getElementById("blobfishAvatar");
+      const factDisplay = document.getElementById("factDisplay");
+      const factText = document.getElementById("factText");
+      const factButton = document.getElementById("factButton");
+      const factSecondaryButton = document.getElementById("factSecondaryButton");
+
+      const facts = [
+        "Blobfish only look ultra-squishy at the surface. At deep-sea pressure, they’re actually more streamlined than your git history.",
+        "Beavers can change entire landscapes with their dams. Meanwhile, one stray CSS rule can change your entire layout.",
+        "Blobfish don’t really swim; they hover using their low-density flesh like a sad, aquatic helium balloon.",
+        "Beavers’ teeth never stop growing, which is the dental equivalent of your backlog of TODO comments.",
+        "A blobfish’s main predator is “being photographed out of water and posted online.”",
+        "Beaver dams slow down water, reduce erosion, and create wetlands. Basically a full-stack resilience pattern.",
+        "If a blobfish had a LinkedIn, its skills section would just say: ‘Vibes, existing, reacting to pressure.’",
+        "Beavers slap their tails on the water as an alarm signal. Devs do the same with keyboards during outages."
+      ];
+
+      function randomFact() {
+        const index = Math.floor(Math.random() * facts.length);
+        return facts[index];
+      }
+
+      function updateFact() {
+        const newFact = randomFact();
+        factText.textContent = newFact;
+
+        // Tiny visual feedback
+        factDisplay.style.transform = "translateY(-2px)";
+        factDisplay.style.boxShadow = "0 14px 30px rgba(15,23,42,0.9)";
+        setTimeout(() => {
+          factDisplay.style.transform = "";
+          factDisplay.style.boxShadow = "";
+        }, 160);
+      }
+
+      factButton.addEventListener("click", updateFact);
+      factSecondaryButton.addEventListener("click", updateFact);
+
+      modeToggle.addEventListener("click", () => {
+        page.classList.toggle("sea-mode");
+      });
+
+      blobfishAvatar.addEventListener("click", () => {
+        blobfishAvatar.classList.add("blobfish-wiggle");
+        blobfishAvatar.style.transition = "transform 0.3s ease";
+        blobfishAvatar.style.transform = "translateY(-4px) scale(1.06)";
+        setTimeout(() => {
+          blobfishAvatar.style.transform = "";
+        }, 220);
+      });
+    })();
+  </script>
+</body>
+</html>
