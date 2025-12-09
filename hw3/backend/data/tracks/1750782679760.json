@@ -1,0 +1,15 @@
+{
+  "title": "Circles",
+  "artist": "Ariana Grande",
+  "album": "Anti",
+  "genres": [
+    "Country",
+    "Metal",
+    "Folk"
+  ],
+  "slug": "circles",
+  "coverImage": "https://picsum.photos/seed/Circles/300/300",
+  "id": "1750782679760",
+  "createdAt": "2025-06-24T16:31:19.760Z",
+  "updatedAt": "2025-06-24T16:31:19.760Z"
+}

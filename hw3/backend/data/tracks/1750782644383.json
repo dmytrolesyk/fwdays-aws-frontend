@@ -1,0 +1,13 @@
+{
+  "title": "Billie Jean",
+  "artist": "Coldplay",
+  "album": "Justice",
+  "genres": [
+    "Blues"
+  ],
+  "slug": "billie-jean",
+  "coverImage": "https://picsum.photos/seed/Billie%20Jean/300/300",
+  "id": "1750782644383",
+  "createdAt": "2025-06-24T16:30:44.383Z",
+  "updatedAt": "2025-06-24T16:30:44.383Z"
+}

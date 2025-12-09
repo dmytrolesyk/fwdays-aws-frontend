@@ -1,0 +1,13 @@
+{
+  "title": "Johnny B. Goode",
+  "artist": "Kendrick Lamar",
+  "album": "Midnight",
+  "genres": [
+    "R&B"
+  ],
+  "slug": "johnny-b-goode",
+  "coverImage": "https://picsum.photos/seed/Johnny%20B.%20Goode/300/300",
+  "id": "1750782644413",
+  "createdAt": "2025-06-24T16:30:44.413Z",
+  "updatedAt": "2025-06-24T16:30:44.413Z"
+}

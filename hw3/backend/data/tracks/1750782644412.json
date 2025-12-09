@@ -1,0 +1,15 @@
+{
+  "title": "Yellow",
+  "artist": "The Weeknd",
+  "album": "30",
+  "genres": [
+    "Hip Hop",
+    "Pop",
+    "Country"
+  ],
+  "slug": "yellow",
+  "coverImage": "https://picsum.photos/seed/Yellow/300/300",
+  "id": "1750782644412",
+  "createdAt": "2025-06-24T16:30:44.412Z",
+  "updatedAt": "2025-06-24T16:30:44.412Z"
+}

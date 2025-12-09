@@ -1,0 +1,13 @@
+{
+  "title": "Diamonds",
+  "artist": "Drake",
+  "album": "Dawn FM",
+  "genres": [
+    "Country"
+  ],
+  "slug": "diamonds",
+  "coverImage": "https://picsum.photos/seed/Diamonds/300/300",
+  "id": "1750782679759",
+  "createdAt": "2025-06-24T16:31:19.759Z",
+  "updatedAt": "2025-06-24T16:31:19.759Z"
+}

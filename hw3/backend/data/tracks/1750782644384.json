@@ -1,0 +1,15 @@
+{
+  "title": "Dynamite",
+  "artist": "Rihanna",
+  "album": "Positions",
+  "genres": [
+    "Jazz",
+    "Hip Hop",
+    "Blues"
+  ],
+  "slug": "dynamite",
+  "coverImage": "https://picsum.photos/seed/Dynamite/300/300",
+  "id": "1750782644384",
+  "createdAt": "2025-06-24T16:30:44.384Z",
+  "updatedAt": "2025-06-24T16:30:44.384Z"
+}

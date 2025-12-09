@@ -1,0 +1,14 @@
+{
+  "title": "Yellow",
+  "artist": "Adele",
+  "genres": [
+    "Electronic",
+    "Country",
+    "Hip Hop"
+  ],
+  "slug": "yellow",
+  "coverImage": "https://picsum.photos/seed/Yellow/300/300",
+  "id": "1750782644402",
+  "createdAt": "2025-06-24T16:30:44.402Z",
+  "updatedAt": "2025-06-24T16:30:44.402Z"
+}

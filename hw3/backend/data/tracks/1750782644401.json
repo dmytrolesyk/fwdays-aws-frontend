@@ -1,0 +1,14 @@
+{
+  "title": "God Only Knows",
+  "artist": "Billie Eilish",
+  "album": "Divide",
+  "genres": [
+    "Jazz",
+    "Folk"
+  ],
+  "slug": "god-only-knows",
+  "coverImage": "https://picsum.photos/seed/God%20Only%20Knows/300/300",
+  "id": "1750782644401",
+  "createdAt": "2025-06-24T16:30:44.401Z",
+  "updatedAt": "2025-06-24T16:30:44.401Z"
+}

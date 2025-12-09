@@ -1,0 +1,14 @@
+{
+  "title": "Gimme Shelter",
+  "artist": "Dua Lipa",
+  "album": "Chromatica",
+  "genres": [
+    "Reggae",
+    "Pop"
+  ],
+  "slug": "gimme-shelter",
+  "coverImage": "https://picsum.photos/seed/Gimme%20Shelter/300/300",
+  "id": "1750782644411",
+  "createdAt": "2025-06-24T16:30:44.411Z",
+  "updatedAt": "2025-06-24T16:30:44.411Z"
+}

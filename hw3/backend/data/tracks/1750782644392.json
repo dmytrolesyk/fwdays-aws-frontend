@@ -1,0 +1,13 @@
+{
+  "title": "Purple Haze",
+  "artist": "The Weeknd",
+  "album": "Un Verano Sin Ti",
+  "genres": [
+    "Hip Hop"
+  ],
+  "slug": "purple-haze",
+  "coverImage": "https://picsum.photos/seed/Purple%20Haze/300/300",
+  "id": "1750782644392",
+  "createdAt": "2025-06-24T16:30:44.392Z",
+  "updatedAt": "2025-06-24T16:30:44.392Z"
+}

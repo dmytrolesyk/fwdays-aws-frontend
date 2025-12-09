@@ -1,0 +1,13 @@
+{
+  "title": "Waterloo Sunset",
+  "artist": "Beyoncé",
+  "album": "Renaissance",
+  "genres": [
+    "Rock"
+  ],
+  "slug": "waterloo-sunset",
+  "coverImage": "https://picsum.photos/seed/Waterloo%20Sunset/300/300",
+  "id": "1750782688492",
+  "createdAt": "2025-06-24T16:31:28.492Z",
+  "updatedAt": "2025-06-24T16:31:28.492Z"
+}

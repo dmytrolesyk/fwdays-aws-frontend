@@ -1,0 +1,12 @@
+{
+  "title": "Peaches",
+  "artist": "BTS",
+  "genres": [
+    "Jazz"
+  ],
+  "slug": "peaches",
+  "coverImage": "https://picsum.photos/seed/Peaches/300/300",
+  "id": "1750782644390",
+  "createdAt": "2025-06-24T16:30:44.390Z",
+  "updatedAt": "2025-06-24T16:30:44.390Z"
+}

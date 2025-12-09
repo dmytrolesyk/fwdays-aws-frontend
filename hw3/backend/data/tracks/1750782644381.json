@@ -1,0 +1,15 @@
+{
+  "title": "Thriller",
+  "artist": "Drake",
+  "album": "SOS",
+  "genres": [
+    "Jazz",
+    "Electronic",
+    "Indie"
+  ],
+  "slug": "thriller",
+  "coverImage": "https://picsum.photos/seed/Thriller/300/300",
+  "id": "1750782644381",
+  "createdAt": "2025-06-24T16:30:44.381Z",
+  "updatedAt": "2025-06-24T16:30:44.381Z"
+}

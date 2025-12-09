@@ -4,35 +4,14 @@ import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import { Construct } from 'constructs';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import { aws_cloudfront_origins } from 'aws-cdk-lib';
+import { FrontendStack } from './frontend-stack';
+import { BackEndStack } from './backend-stack';
 
 export class InfrastructureStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const blobFishAndBeaverBucket = new s3.Bucket(this, 'BlobFishAndBeaverBucket', {
-      websiteIndexDocument: 'index.html',
-      publicReadAccess: true,
-      blockPublicAccess: new s3.BlockPublicAccess({
-        blockPublicAcls: false,
-        ignorePublicAcls: false,
-        restrictPublicBuckets: false,
-        blockPublicPolicy: false,
-      }),
-    });
-
-    new cloudfront.Distribution(this, 'BlobFishAndBeaverDistribution', {
-      defaultBehavior: {
-        origin: new aws_cloudfront_origins.S3StaticWebsiteOrigin(blobFishAndBeaverBucket, {
-          originPath: '/',
-        }),
-        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-      },
-      defaultRootObject: 'index.html',  
-    });
-
-    new BucketDeployment(this, 'BlobFishAndBeaverBucketDeployment', {
-      sources: [Source.asset('../frontend/dist')],
-      destinationBucket: blobFishAndBeaverBucket,
-    });
+    const frontendStack = new FrontendStack(this, 'FrontendStack');
+    const backendStack = new BackEndStack(this, 'BackendStack');
   }
 }

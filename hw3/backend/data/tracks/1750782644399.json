@@ -1,0 +1,14 @@
+{
+  "title": "Smells Like Teen Spirit",
+  "artist": "Beyoncé",
+  "album": "Beerbongs & Bentleys",
+  "genres": [
+    "Blues",
+    "Jazz"
+  ],
+  "slug": "smells-like-teen-spirit",
+  "coverImage": "https://picsum.photos/seed/Smells%20Like%20Teen%20Spirit/300/300",
+  "id": "1750782644399",
+  "createdAt": "2025-06-24T16:30:44.399Z",
+  "updatedAt": "2025-06-24T16:30:44.399Z"
+}

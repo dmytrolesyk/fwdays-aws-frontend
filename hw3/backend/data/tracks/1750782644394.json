@@ -1,0 +1,15 @@
+{
+  "title": "Shape of You",
+  "artist": "Drake",
+  "album": "Future Nostalgia",
+  "genres": [
+    "Pop",
+    "Reggae",
+    "Electronic"
+  ],
+  "slug": "shape-of-you",
+  "coverImage": "https://picsum.photos/seed/Shape%20of%20You/300/300",
+  "id": "1750782644394",
+  "createdAt": "2025-06-24T16:30:44.394Z",
+  "updatedAt": "2025-06-24T16:30:44.394Z"
+}

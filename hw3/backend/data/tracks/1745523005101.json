@@ -1,0 +1,14 @@
+{
+  "title": "Custer",
+  "artist": "Slipknot",
+  "album": "The gray chapter",
+  "genres": [
+    "Rock",
+    "Metal"
+  ],
+  "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY246VXoo9cMR0X3mt4ZxRAHtQyXfmGDVLIQ&s",
+  "slug": "custer",
+  "id": "1745523005101",
+  "createdAt": "2025-04-24T19:30:05.102Z",
+  "updatedAt": "2025-04-24T19:30:05.102Z"
+}

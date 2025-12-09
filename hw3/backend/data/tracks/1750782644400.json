@@ -1,0 +1,15 @@
+{
+  "title": "Rocket Man",
+  "artist": "Billie Eilish",
+  "album": "Renaissance",
+  "genres": [
+    "Metal",
+    "Folk",
+    "Hip Hop"
+  ],
+  "slug": "rocket-man",
+  "coverImage": "https://picsum.photos/seed/Rocket%20Man/300/300",
+  "id": "1750782644400",
+  "createdAt": "2025-06-24T16:30:44.400Z",
+  "updatedAt": "2025-06-24T16:30:44.400Z"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Peaches",
+  "artist": "Ariana Grande",
+  "album": "Midnight",
+  "genres": [
+    "Electronic",
+    "Classical",
+    "Reggae"
+  ],
+  "slug": "peaches",
+  "coverImage": "https://picsum.photos/seed/Peaches/300/300",
+  "id": "1750782644405",
+  "createdAt": "2025-06-24T16:30:44.405Z",
+  "updatedAt": "2025-06-24T16:30:44.405Z"
+}

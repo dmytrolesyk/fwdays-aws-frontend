@@ -1,0 +1,15 @@
+{
+  "title": "Levitating",
+  "artist": "Coldplay",
+  "album": "Un Verano Sin Ti",
+  "genres": [
+    "Folk",
+    "Reggae",
+    "Pop"
+  ],
+  "slug": "levitating",
+  "coverImage": "https://picsum.photos/seed/Levitating/300/300",
+  "id": "1750782679763",
+  "createdAt": "2025-06-24T16:31:19.763Z",
+  "updatedAt": "2025-06-24T16:31:19.763Z"
+}

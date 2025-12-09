@@ -1,0 +1,14 @@
+{
+  "title": "Purple Rain",
+  "artist": "Beyoncé",
+  "genres": [
+    "Country",
+    "Rock",
+    "Pop"
+  ],
+  "slug": "purple-rain",
+  "coverImage": "https://picsum.photos/seed/Purple%20Rain/300/300",
+  "id": "1750782644398",
+  "createdAt": "2025-06-24T16:30:44.398Z",
+  "updatedAt": "2025-06-24T16:30:44.398Z"
+}

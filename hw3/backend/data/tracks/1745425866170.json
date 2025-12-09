@@ -1,0 +1,14 @@
+{
+  "title": "Hello",
+  "artist": "Yoyi",
+  "album": "album",
+  "genres": [
+    "jazz",
+    "oriental"
+  ],
+  "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Louis_Armstrong_restored.jpg/640px-Louis_Armstrong_restored.jpg",
+  "slug": "hello",
+  "id": "1745425866170",
+  "createdAt": "2025-04-23T16:31:06.170Z",
+  "updatedAt": "2025-04-23T16:31:06.170Z"
+}
