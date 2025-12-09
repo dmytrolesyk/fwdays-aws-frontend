@@ -14,6 +14,9 @@ export class FrontendStack extends cdk.Stack {
       websiteIndexDocument: 'index.html',
       publicReadAccess: true,
       blockPublicAccess: new s3.BlockPublicAccess({
+        blockPublicAcls: false,
+        ignorePublicAcls: false,
+        restrictPublicBuckets: false,
         blockPublicPolicy: false,
       }),
     });
@@ -25,7 +28,16 @@ export class FrontendStack extends cdk.Stack {
         }),
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
-      defaultRootObject: 'index.html',  
+      defaultRootObject: 'index.html',
+      // SPA fallback: serve index.html for unknown keys so client-side routing works
+      errorResponses: [
+        {
+          httpStatus: 404,
+          responseHttpStatus: 200,
+          responsePagePath: '/index.html',
+          ttl: cdk.Duration.seconds(0),
+        },
+      ],
     });
 
     new BucketDeployment(this, 'BlobFishAndBeaverBucketDeployment', {
