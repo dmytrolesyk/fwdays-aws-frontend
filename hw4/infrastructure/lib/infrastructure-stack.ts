@@ -3,6 +3,7 @@ import { Construct } from 'constructs';
 import { DynamoDbStack } from './dynamodb-stack';
 import { LambdaStack } from './lambda-stack';
 import { ApiStack } from './api-gateway-stack';
+import { FrontendStack } from './frontend-stack';
 
 export class InfrastructureStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -17,5 +18,7 @@ export class InfrastructureStack extends cdk.Stack {
     new ApiStack(this, "ApiStack", {
       processTasks: lambdas.processTasks,
     });
+  
+    new FrontendStack(this, "FrontendStack");
   }
 }
