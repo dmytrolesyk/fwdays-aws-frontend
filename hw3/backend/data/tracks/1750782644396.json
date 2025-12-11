@@ -1,0 +1,14 @@
+{
+  "title": "Billie Jean",
+  "artist": "Dua Lipa",
+  "album": "Happier Than Ever",
+  "genres": [
+    "Electronic",
+    "Pop"
+  ],
+  "slug": "billie-jean",
+  "coverImage": "https://picsum.photos/seed/Billie%20Jean/300/300",
+  "id": "1750782644396",
+  "createdAt": "2025-06-24T16:30:44.396Z",
+  "updatedAt": "2025-06-24T16:30:44.396Z"
+}

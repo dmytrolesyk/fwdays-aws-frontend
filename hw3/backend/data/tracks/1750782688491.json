@@ -1,0 +1,14 @@
+{
+  "title": "What's Going On",
+  "artist": "Ed Sheeran",
+  "album": "Dawn FM",
+  "genres": [
+    "Classical",
+    "Jazz"
+  ],
+  "slug": "whats-going-on",
+  "coverImage": "https://picsum.photos/seed/What's%20Going%20On/300/300",
+  "id": "1750782688491",
+  "createdAt": "2025-06-24T16:31:28.491Z",
+  "updatedAt": "2025-06-24T16:31:28.491Z"
+}

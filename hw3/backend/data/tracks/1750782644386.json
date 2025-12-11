@@ -1,0 +1,14 @@
+{
+  "title": "Stairway to Heaven",
+  "artist": "Kendrick Lamar",
+  "album": "Renaissance",
+  "genres": [
+    "Rock",
+    "Classical"
+  ],
+  "slug": "stairway-to-heaven",
+  "coverImage": "https://picsum.photos/seed/Stairway%20to%20Heaven/300/300",
+  "id": "1750782644386",
+  "createdAt": "2025-06-24T16:30:44.386Z",
+  "updatedAt": "2025-06-24T16:30:44.386Z"
+}

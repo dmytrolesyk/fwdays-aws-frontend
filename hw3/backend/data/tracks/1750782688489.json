@@ -1,0 +1,13 @@
+{
+  "title": "Peaches",
+  "artist": "Justin Bieber",
+  "album": "Beerbongs & Bentleys",
+  "genres": [
+    "Metal"
+  ],
+  "slug": "peaches",
+  "coverImage": "https://picsum.photos/seed/Peaches/300/300",
+  "id": "1750782688489",
+  "createdAt": "2025-06-24T16:31:28.489Z",
+  "updatedAt": "2025-06-24T16:31:28.489Z"
+}

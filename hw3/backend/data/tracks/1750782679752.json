@@ -1,0 +1,15 @@
+{
+  "title": "Bohemian Rhapsody",
+  "artist": "BTS",
+  "album": "Future Nostalgia",
+  "genres": [
+    "Rock",
+    "Blues",
+    "Electronic"
+  ],
+  "slug": "bohemian-rhapsody",
+  "coverImage": "https://picsum.photos/seed/Bohemian%20Rhapsody/300/300",
+  "id": "1750782679752",
+  "createdAt": "2025-06-24T16:31:19.752Z",
+  "updatedAt": "2025-06-24T16:31:19.752Z"
+}

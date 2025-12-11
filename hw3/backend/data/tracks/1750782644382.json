@@ -1,0 +1,14 @@
+{
+  "title": "Stairway to Heaven",
+  "artist": "Justin Bieber",
+  "album": "Midnight",
+  "genres": [
+    "Folk",
+    "Rock"
+  ],
+  "slug": "stairway-to-heaven",
+  "coverImage": "https://picsum.photos/seed/Stairway%20to%20Heaven/300/300",
+  "id": "1750782644382",
+  "createdAt": "2025-06-24T16:30:44.382Z",
+  "updatedAt": "2025-06-24T16:30:44.382Z"
+}

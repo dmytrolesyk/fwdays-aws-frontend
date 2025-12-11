@@ -1,0 +1,13 @@
+{
+  "title": "Uptown Funk",
+  "artist": "Rihanna",
+  "genres": [
+    "Rock",
+    "Classical"
+  ],
+  "slug": "uptown-funk",
+  "coverImage": "https://picsum.photos/seed/Uptown%20Funk/300/300",
+  "id": "1750782679758",
+  "createdAt": "2025-06-24T16:31:19.758Z",
+  "updatedAt": "2025-06-24T16:31:19.758Z"
+}

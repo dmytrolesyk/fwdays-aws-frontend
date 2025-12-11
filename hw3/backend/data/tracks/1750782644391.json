@@ -1,0 +1,15 @@
+{
+  "title": "Uptown Funk",
+  "artist": "Adele",
+  "album": "Harry's House",
+  "genres": [
+    "Electronic",
+    "Blues",
+    "Rock"
+  ],
+  "slug": "uptown-funk",
+  "coverImage": "https://picsum.photos/seed/Uptown%20Funk/300/300",
+  "id": "1750782644391",
+  "createdAt": "2025-06-24T16:30:44.391Z",
+  "updatedAt": "2025-06-24T16:30:44.391Z"
+}

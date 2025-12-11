@@ -1,0 +1,14 @@
+{
+  "title": "some other track",
+  "artist": "korn",
+  "album": "some other albim",
+  "genres": [
+    "Rock"
+  ],
+  "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWrAUnhqSxsTRbwVL3gS3OAwZWRMw9tBYOZA&s",
+  "slug": "some-other-track",
+  "id": "1745484027427",
+  "createdAt": "2025-04-24T08:40:27.427Z",
+  "updatedAt": "2025-04-24T18:23:31.539Z",
+  "audioFile": "1745484027427.mp3"
+}

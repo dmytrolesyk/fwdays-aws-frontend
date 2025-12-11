@@ -1,0 +1,14 @@
+{
+  "title": "Should I stay or should I go",
+  "artist": "The Clash",
+  "album": "Clash",
+  "genres": [
+    "Rock",
+    "Punk"
+  ],
+  "coverImage": "https://upload.wikimedia.org/wikipedia/en/9/9a/The_Clash_UK.jpg",
+  "slug": "should-i-stay-or-should-i-go",
+  "id": "1745427168338",
+  "createdAt": "2025-04-23T16:52:48.339Z",
+  "updatedAt": "2025-04-23T16:52:48.339Z"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Heroes",
+  "artist": "Dua Lipa",
+  "album": "Divide",
+  "genres": [
+    "Hip Hop"
+  ],
+  "slug": "heroes",
+  "coverImage": "https://picsum.photos/seed/Heroes/300/300",
+  "id": "1750782644410",
+  "createdAt": "2025-06-24T16:30:44.410Z",
+  "updatedAt": "2025-06-24T16:30:44.410Z"
+}

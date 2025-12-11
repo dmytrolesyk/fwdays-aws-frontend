@@ -1,0 +1,13 @@
+{
+  "title": "Bohemian Rhapsody",
+  "artist": "Billie Eilish",
+  "album": "Chromatica",
+  "genres": [
+    "Classical"
+  ],
+  "slug": "bohemian-rhapsody",
+  "coverImage": "https://picsum.photos/seed/Bohemian%20Rhapsody/300/300",
+  "id": "1750782688490",
+  "createdAt": "2025-06-24T16:31:28.490Z",
+  "updatedAt": "2025-06-24T16:31:28.490Z"
+}

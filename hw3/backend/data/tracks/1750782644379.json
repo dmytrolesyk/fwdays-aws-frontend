@@ -1,0 +1,15 @@
+{
+  "title": "Waterloo Sunset",
+  "artist": "Post Malone",
+  "album": "Midnight",
+  "genres": [
+    "Country",
+    "Jazz",
+    "Pop"
+  ],
+  "slug": "waterloo-sunset",
+  "coverImage": "https://picsum.photos/seed/Waterloo%20Sunset/300/300",
+  "id": "1750782644379",
+  "createdAt": "2025-06-24T16:30:44.379Z",
+  "updatedAt": "2025-06-24T16:30:44.379Z"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Rain On Me",
+  "artist": "Justin Bieber",
+  "album": "Future Nostalgia",
+  "genres": [
+    "Classical",
+    "Electronic",
+    "Blues"
+  ],
+  "slug": "rain-on-me",
+  "coverImage": "https://picsum.photos/seed/Rain%20On%20Me/300/300",
+  "id": "1750782644406",
+  "createdAt": "2025-06-24T16:30:44.406Z",
+  "updatedAt": "2025-06-24T16:30:44.406Z"
+}
